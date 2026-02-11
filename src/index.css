@@ -4,6 +4,9 @@
 
 html { scroll-behavior: smooth; }
 
+html, body { overflow-x: hidden; }
+
+
 @layer base {
   body { @apply font-body bg-cream text-ink; }
   h1, h2, h3, h4 { @apply font-title text-ink; }
