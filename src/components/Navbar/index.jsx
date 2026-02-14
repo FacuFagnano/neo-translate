@@ -3,6 +3,7 @@ import { useLanguage } from "../../context/LanguageContext";
 import { content } from "../../data/content";
 import gbFlag from "../../assets/flags/gb.png";
 import esFlag from "../../assets/flags/es.png";
+import logo from "../../assets/logo/neo-logo.jpg";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -28,6 +29,10 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
+  const linkClass = "no-underline text-slate hover:text-ink transition";
+  const mobileLinkClass =
+    "no-underline rounded-xl px-3 py-2 text-slate hover:bg-ink/5 transition";
+
   return (
     <header
       className={[
@@ -42,36 +47,47 @@ export default function Navbar() {
           {/* Logo */}
           <a
             href="#home"
-            className="no-underline [font-family:var(--font-title)] text-lg tracking-tight text-ink truncate"
+            className="flex items-center gap-3 no-underline min-w-0"
             onClick={() => setOpen(false)}
           >
-            Yuli Translations
+            {/* Logo */}
+            <img
+              src={logo}
+              alt="Neo Translations"
+              className="h-10 sm:h-12 w-auto object-contain rounded-md"
+            />
+
+            {/* Texto al lado del logo */}
+            <div className="min-w-0 leading-tight hidden sm:block">
+              <p className="text-ink font-semibold text-sm sm:text-base truncate">
+                Neo Translations
+              </p>
+
+              <p className="text-slate text-xs sm:text-sm truncate">
+                {t.navbar.logo}
+              </p>
+            </div>
           </a>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a
-              href="#home"
-              className="no-underline text-slate hover:text-ink transition"
-            >
+            <a href="#home" className={linkClass}>
               {t.navbar.home}
             </a>
-
-            <a
-              href="#about"
-              className="no-underline text-slate hover:text-ink transition"
-            >
+            <a href="#mission" className={linkClass}>
+              {t.navbar.mission}
+            </a>
+            <a href="#services" className={linkClass}>
+              {t.navbar.services}
+            </a>
+            <a href="#expertise" className={linkClass}>
+              {t.navbar.expertise}
+            </a>
+            <a href="#about" className={linkClass}>
               {t.navbar.about}
             </a>
 
-            <a
-              href="#contact"
-              className="no-underline text-slate hover:text-ink transition"
-            >
-              {t.navbar.contact}
-            </a>
-
-            {/* Primary button */}
+            {/* CTA */}
             <a
               href="#contact"
               className="no-underline rounded-2xl bg-ink text-cream px-4 py-2 hover:opacity-90 transition"
@@ -128,7 +144,7 @@ export default function Navbar() {
             aria-expanded={open}
           >
             {open ? (
-              // X icon
+              // X
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -137,10 +153,14 @@ export default function Navbar() {
                 strokeWidth="2"
                 className="h-5 w-5 text-ink"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             ) : (
-              // Hamburger icon
+              // Hamburger
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -149,7 +169,11 @@ export default function Navbar() {
                 strokeWidth="2"
                 className="h-5 w-5 text-ink"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
             )}
           </button>
@@ -162,23 +186,42 @@ export default function Navbar() {
               <div className="flex flex-col gap-2 text-sm font-medium min-w-0">
                 <a
                   href="#home"
-                  className="no-underline rounded-xl px-3 py-2 text-slate hover:bg-ink/5"
+                  className={mobileLinkClass}
                   onClick={() => setOpen(false)}
                 >
                   {t.navbar.home}
                 </a>
-
+                <a
+                  href="#mission"
+                  className={mobileLinkClass}
+                  onClick={() => setOpen(false)}
+                >
+                  {t.navbar.mission}
+                </a>
+                <a
+                  href="#services"
+                  className={mobileLinkClass}
+                  onClick={() => setOpen(false)}
+                >
+                  {t.navbar.services}
+                </a>
+                <a
+                  href="#expertise"
+                  className={mobileLinkClass}
+                  onClick={() => setOpen(false)}
+                >
+                  {t.navbar.expertise}
+                </a>
                 <a
                   href="#about"
-                  className="no-underline rounded-xl px-3 py-2 text-slate hover:bg-ink/5"
+                  className={mobileLinkClass}
                   onClick={() => setOpen(false)}
                 >
                   {t.navbar.about}
                 </a>
-
                 <a
                   href="#contact"
-                  className="no-underline rounded-xl px-3 py-2 text-slate hover:bg-ink/5"
+                  className={mobileLinkClass}
                   onClick={() => setOpen(false)}
                 >
                   {t.navbar.contact}
@@ -224,7 +267,7 @@ export default function Navbar() {
                 {/* CTA mobile */}
                 <a
                   href="#contact"
-                  className="no-underline mt-2 rounded-xl bg-ink text-cream px-3 py-2 text-center"
+                  className="no-underline mt-2 rounded-xl bg-ink text-cream px-3 py-2 text-center hover:opacity-90 transition"
                   onClick={() => setOpen(false)}
                 >
                   {t.navbar.quote}
