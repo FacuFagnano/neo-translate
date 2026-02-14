@@ -1,32 +1,51 @@
-export default function About() {
+import { useLanguage } from "../../context/LanguageContext";
+import { content } from "../../data/content";
+
+export default function Contact() {
+  const { lang } = useLanguage();
+  const t = content[lang].contact;
+
   return (
-    <section id="about" className="border-t border-ink/10 py-16 sm:py-20">
+    <section id="contact" className="bg-beige/40 py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl [font-family:var(--font-title)]">
-          About Me
-        </h2>
+        <div className="grid lg:grid-cols-2 gap-10 items-start">
+          {/* Text */}
+          <div>
+            <h2 className="text-3xl sm:text-4xl [font-family:var(--font-title)]">
+              {t.title}
+            </h2>
 
-        <p className="mt-4 text-slate max-w-2xl leading-relaxed">
-          I’m a NAATI certified translator helping individuals and businesses
-          with official translations for immigration, legal and academic
-          documents.
-        </p>
+            <p className="mt-4 text-slate max-w-xl">{t.text1}</p>
+            <p className="mt-4 text-slate max-w-xl">{t.text2}</p>
+          </div>
 
-        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {[
-            { t: "Accuracy", d: "Careful terminology & formatting." },
-            { t: "Confidential", d: "Secure handling of documents." },
-            { t: "Fast", d: "Clear timelines & delivery options." },
-            { t: "Friendly", d: "Simple process and guidance." },
-          ].map((x) => (
-            <div
-              key={x.t}
-              className="rounded-3xl border border-ink/10 bg-white/30 p-5"
-            >
-              <p className="[font-family:var(--font-title)] text-lg">{x.t}</p>
-              <p className="mt-2 text-sm text-slate leading-relaxed">{x.d}</p>
-            </div>
-          ))}
+          {/* Form */}
+          <div className="rounded-3xl border border-ink/10 bg-cream/70 p-6 sm:p-8">
+            <form className="grid gap-4">
+              <input
+                placeholder="Full Name"
+                className="rounded-2xl border border-ink/15 bg-cream px-4 py-3 outline-none focus:ring-2 focus:ring-sky/60"
+              />
+
+              <input
+                type="email"
+                placeholder="Email"
+                className="rounded-2xl border border-ink/15 bg-cream px-4 py-3 outline-none focus:ring-2 focus:ring-sky/60"
+              />
+
+              <textarea
+                placeholder="Message"
+                className="min-h-[140px] rounded-2xl border border-ink/15 bg-cream px-4 py-3 outline-none focus:ring-2 focus:ring-sky/60"
+              />
+
+              <button
+                type="button"
+                className="rounded-2xl bg-ink text-cream px-6 py-3 font-medium hover:opacity-90 transition"
+              >
+                {t.button}
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </section>

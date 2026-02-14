@@ -1,32 +1,42 @@
+import { useLanguage } from "../../context/LanguageContext";
+import { content } from "../../data/content";
+import aboutmePhoto from "../../assets/about/aboutme.jpg";
+
 export default function About() {
+  const { lang } = useLanguage();
+  const t = content[lang].about;
+
   return (
-    <section id="about" className="border-t border-ink/10 py-16 sm:py-20">
+    <section id="about" className="bg-cream py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl [font-family:var(--font-title)]">
-          About Me
-        </h2>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          
+          {/* Photo */}
+          <div className="relative">
+            <img
+              src={aboutmePhoto}
+              alt="Yuliana Neonelli - NAATI Certified Translator"
+              className="rounded-3xl border border-ink/10 shadow-sm object-cover w-full max-h-[520px]"
+            />
 
-        <p className="mt-4 text-slate max-w-2xl leading-relaxed">
-          I’m a NAATI certified translator helping individuals and businesses
-          with official translations for immigration, legal and academic
-          documents.
-        </p>
+            {/* Soft decorative blob */}
+            <div className="absolute -z-10 -bottom-10 -left-10 h-44 w-44 rounded-full bg-sky/40 blur-2xl" />
+          </div>
 
-        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {[
-            { t: "Accuracy", d: "Careful terminology & formatting." },
-            { t: "Confidential", d: "Secure handling of documents." },
-            { t: "Fast", d: "Clear timelines & delivery options." },
-            { t: "Friendly", d: "Simple process and guidance." },
-          ].map((x) => (
-            <div
-              key={x.t}
-              className="rounded-3xl border border-ink/10 bg-white/30 p-5"
-            >
-              <p className="[font-family:var(--font-title)] text-lg">{x.t}</p>
-              <p className="mt-2 text-sm text-slate leading-relaxed">{x.d}</p>
+          {/* Text */}
+          <div>
+            <h2 className="text-3xl sm:text-4xl [font-family:var(--font-title)]">
+              {t.title}
+            </h2>
+
+            <div className="mt-6 space-y-4 text-slate leading-relaxed">
+              <p>{t.text1}</p>
+              <p>{t.text2}</p>
+              <p>{t.text3}</p>
+              <p>{t.text4}</p>
+              <p>{t.text5}</p>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
