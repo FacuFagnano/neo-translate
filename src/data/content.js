@@ -85,9 +85,12 @@ export const content = {
         "Feel free to get in touch to request a quote or start a conversation.",
       button: "Send Message",
     },
+
+    footer: {
+      text1: "NAATI certified translations - clear, accurate and trusted."
+    },
   },
 
-  // ✅ Traducción profesional al español
   es: {
     navbar: {
       logo: "Traductora Certificada NAATI",
@@ -173,6 +176,10 @@ export const content = {
       text2:
         "No dudes en contactarme para solicitar un presupuesto o iniciar una conversación.",
       button: "Enviar mensaje",
+    },
+
+    footer: {
+      text1: "Traducciones certificadas NAATI - claras, precisas y confiables."
     },
   },
 };
