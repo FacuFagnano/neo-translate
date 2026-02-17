@@ -1,20 +1,37 @@
 import { useLanguage } from "../../context/LanguageContext";
 import { content } from "../../data/content";
+import useRevealOnScroll from "../../hooks/useRevealOnScroll";
 
-function ServiceBlock({ title, items }) {
+import studentVisaImg from "../../assets/services/student-visa.jpg";
+import standardDocsImg from "../../assets/services/servicios-licencia-argentina.jpg";
+import nonNaatiImg from "../../assets/services/traducciones-no-naati.png";
+
+function ServiceImageCard({ title, image, lines }) {
   return (
-    <div className="rounded-3xl border border-ink/10 bg-beige/55 p-8 hover:bg-beige/70 transition">
-      <h3 className="text-lg font-semibold text-ink">{title}</h3>
+    <div className="group relative overflow-hidden rounded-3xl border border-ink/10 bg-beige/40">
+      {/* Imagen */}
+      <img
+        src={image}
+        alt={title}
+        className="h-[360px] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+      />
 
-      <div className="mt-5 space-y-3">
-        {items.map((item, i) => (
-          <p
-            key={i}
-            className="text-slate leading-relaxed border-l-2 border-ink/15 pl-4"
-          >
-            {item}
-          </p>
-        ))}
+      {/* Título visible */}
+      <div className="absolute text-center inset-x-0 bottom-0 p-5 transition duration-300 group-hover:opacity-0">
+        <div className="inline-flex rounded-2xl bg-cream/85 backdrop-blur px-4 py-2 border border-ink/10">
+          <h3 className="text-ink font-semibold">{title}</h3>
+        </div>
+      </div>
+
+      {/* Overlay hover */}
+      <div className="absolute inset-0 flex items-end p-6 opacity-0 transition duration-300 group-hover:opacity-100">
+        <div className="w-full rounded-2xl bg-ink/55 backdrop-blur p-5 text-cream">
+          <div className="space-y-3 text-sm leading-relaxed">
+            {lines.map((txt, i) => (
+              <p key={i}>{txt}</p>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -24,67 +41,59 @@ export default function Services() {
   const { lang } = useLanguage();
   const t = content[lang].services;
 
-  // agrupamos servicios en 3 bloques grandes
-  const blocks = [
+  const { ref, isVisible } = useRevealOnScroll();
+
+  const cards = [
     {
       title:
-        lang === "es"
-          ? "Traducciones certificadas"
-          : "Certified Translations",
-      items: [
-        t.list[1],
-        "Certified translations for official and migration purposes.",
-        "Handled with precision and NAATI compliance.",
-      ],
+        lang === "es" ? "Traducciones certificadas" : "Certified Translations",
+      image: studentVisaImg,
+      lines: [t.list[1], t.list[2]],
     },
     {
-      title:
-        lang === "es"
-          ? "Documentos estándar"
-          : "Standard Documents",
-      items: [
-        t.list[3],
-        "Birth, marriage, police checks, diplomas and transcripts.",
-        "Fast and reliable delivery.",
-      ],
+      title: lang === "es" ? "Documentos estándar" : "Standard Documents",
+      image: standardDocsImg,
+      lines: [t.list[3]],
     },
     {
-      title:
-        lang === "es"
-          ? "Servicios profesionales"
-          : "Professional & Business",
-      items: [
-        t.list[4],
-        t.list[5],
-        "Legal, business and specialised translations on request.",
-      ],
+      title: lang === "es" ? "Traducciones no NAATI" : "Non-NAATI Translations",
+      image: nonNaatiImg,
+      lines: [t.list[0], t.list[4], t.list[5]],
     },
   ];
 
   return (
-    <section id="services" className="bg-cream py-16 sm:py-20">
+    <section
+      id="services"
+      ref={ref}
+      className={`bg-cream py-16 sm:py-20 reveal ${
+        isVisible ? "reveal--visible" : ""
+      }`}
+    >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        {/* Header aligned RIGHT */}
+        {/* Header alineado a la derecha (como veníamos haciendo) */}
         <div className="flex justify-end">
           <div className="max-w-3xl text-right">
             <h2 className="text-3xl sm:text-4xl [font-family:var(--font-title)]">
               {t.title}
             </h2>
-
-            <p className="mt-6 text-slate leading-relaxed">
-              {t.intro}
-            </p>
+            <p className="mt-6 text-slate leading-relaxed">{t.intro}</p>
           </div>
         </div>
 
-        {/* Blocks */}
+        {/* Cards */}
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {blocks.map((block, i) => (
-            <ServiceBlock key={i} title={block.title} items={block.items} />
+          {cards.map((c) => (
+            <ServiceImageCard
+              key={c.title}
+              title={c.title}
+              image={c.image}
+              lines={c.lines}
+            />
           ))}
         </div>
 
-        {/* Closing text aligned RIGHT */}
+        {/* Closing alineado derecha */}
         <div className="flex justify-end">
           <p className="mt-10 text-slate leading-relaxed max-w-3xl text-right">
             {t.closing}
