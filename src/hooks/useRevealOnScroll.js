@@ -16,7 +16,7 @@ export default function useRevealOnScroll(options = {}) {
         }
       },
       {
-        threshold: 0.40,
+        threshold: 0.20,
         rootMargin: "0px 0px -10% 0px",
         ...options,
       }
