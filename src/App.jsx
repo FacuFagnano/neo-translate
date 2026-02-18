@@ -6,6 +6,8 @@ import Expertise from "./components/Expertise";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
+
 
 export default function App() {
   return (
@@ -14,14 +16,15 @@ export default function App() {
 
       <main>
         <Home />
+        <About />
         <Mission />
         <Services />
         <Expertise />
-        <About />
         <Contact />
       </main>
 
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 }

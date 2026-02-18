@@ -74,6 +74,9 @@ export default function Navbar() {
             <a href="#home" className={linkClass}>
               {t.navbar.home}
             </a>
+            <a href="#about" className={linkClass}>
+              {t.navbar.about}
+            </a>
             <a href="#mission" className={linkClass}>
               {t.navbar.mission}
             </a>
@@ -82,9 +85,6 @@ export default function Navbar() {
             </a>
             <a href="#expertise" className={linkClass}>
               {t.navbar.expertise}
-            </a>
-            <a href="#about" className={linkClass}>
-              {t.navbar.about}
             </a>
 
             {/* CTA */}

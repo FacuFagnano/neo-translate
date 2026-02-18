@@ -1,20 +1,27 @@
 import { useLanguage } from "../../context/LanguageContext";
 import { content } from "../../data/content";
+import useRevealOnScroll from "../../hooks/useRevealOnScroll";
 
 export default function Expertise() {
   const { lang } = useLanguage();
   const t = content[lang].expertise;
 
+  const { ref, isVisible } = useRevealOnScroll();
+
   return (
-    <section id="expertise" className="bg-beige/40 py-16 sm:py-20">
+    <section
+      id="expertise"
+      ref={ref}
+      className={`bg-cream py-16 sm:py-20 reveal ${
+        isVisible ? "reveal--visible" : ""
+      }`}
+    >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl [font-family:var(--font-title)]">
           {t.title}
         </h2>
 
-        <p className="mt-6 text-slate leading-relaxed max-w-3xl">
-          {t.text1}
-        </p>
+        <p className="mt-6 text-slate leading-relaxed max-w-3xl">{t.text1}</p>
 
         <p className="mt-8 font-medium text-ink">{t.text2}</p>
 

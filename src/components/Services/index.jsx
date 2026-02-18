@@ -66,12 +66,11 @@ export default function Services() {
     <section
       id="services"
       ref={ref}
-      className={`bg-cream py-16 sm:py-20 reveal ${
+      className={`bg-beige/40 py-16 sm:py-20 reveal ${
         isVisible ? "reveal--visible" : ""
       }`}
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        {/* Header alineado a la derecha (como veníamos haciendo) */}
         <div className="flex justify-end">
           <div className="max-w-3xl text-right">
             <h2 className="text-3xl sm:text-4xl [font-family:var(--font-title)]">
