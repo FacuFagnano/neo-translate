@@ -76,7 +76,7 @@ export default function Contact() {
             <div className="mt-6 flex flex-wrap gap-3">
               {/* Instagram */}
               <a
-                href="https://www.instagram.com/neo.translation"
+                href="https://www.instagram.com/neo.translations"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-2xl border border-ink/15 bg-cream px-4 py-2 text-sm font-medium text-ink hover:bg-beige/40 transition no-underline"
