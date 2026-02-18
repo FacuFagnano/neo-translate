@@ -12,11 +12,11 @@ export default function useRevealOnScroll(options = {}) {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(el); // reveal una sola vez (como portfolio)
+          observer.unobserve(el);
         }
       },
       {
-        threshold: 0.15,
+        threshold: 0.40,
         rootMargin: "0px 0px -10% 0px",
         ...options,
       }

@@ -1,16 +1,24 @@
 import { useLanguage } from "../../context/LanguageContext";
 import { content } from "../../data/content";
+import useRevealOnScroll from "../../hooks/useRevealOnScroll";
 import aboutmePhoto from "../../assets/about/aboutme.jpg";
 
 export default function About() {
   const { lang } = useLanguage();
   const t = content[lang].about;
 
+  const { ref, isVisible } = useRevealOnScroll();
+
   return (
-    <section id="about" className="bg-cream py-16 sm:py-20">
+    <section
+      id="about"
+      ref={ref}
+      className={`bg-beige/40 py-16 sm:py-20 reveal ${
+        isVisible ? "reveal--visible" : ""
+      }`}
+    >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          
           {/* Photo */}
           <div className="relative">
             <img
