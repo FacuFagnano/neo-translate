@@ -16,7 +16,7 @@ html, body { overflow-x: hidden; }
 .reveal {
   opacity: 0;
   transform: translateY(14px);
-  transition: opacity 700ms ease, transform 700ms ease;
+  transition: opacity 0.9s ease, transform 0.9s ease;
   will-change: opacity, transform;
 }
 
