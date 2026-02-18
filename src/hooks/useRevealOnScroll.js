@@ -8,6 +8,8 @@ export default function useRevealOnScroll(options = {}) {
     const el = ref.current;
     if (!el) return;
 
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -16,10 +18,10 @@ export default function useRevealOnScroll(options = {}) {
         }
       },
       {
-        threshold: 0.40,
-        rootMargin: "0px 0px -10% 0px",
+        threshold: isMobile ? 0.08 : 0.40,
+        rootMargin: isMobile ? "0px 0px -40% 0px" : "0px 0px -25% 0px",
         ...options,
-      }
+      },
     );
 
     observer.observe(el);
