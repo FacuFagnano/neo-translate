@@ -6,7 +6,7 @@ import Expertise from "./components/Expertise";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import FloatingWhatsApp from "./components/FloatingWhatsApp";
+import FloatingWhatsApp from "./components/FloatingWhatsapp";
 
 
 export default function App() {
