@@ -21,25 +21,15 @@ export default function Home() {
           Desktop: texto primero
         */}
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Logo / Image Side */}
-          <div className="order-1 lg:order-2 relative flex justify-center lg:justify-end">
-            {/* Mobile logo (smaller, no mask) */}
-            <img
-              src={logo}
-              alt="Neo Translations"
-              className="block lg:hidden w-[220px] sm:w-[280px] h-auto object-contain opacity-95"
-            />
-
-            {/* Desktop logo */}
-            <img
-              src={logo}
-              alt="Neo Translations"
-              className="w-[220px] sm:w-[280px] lg:w-[520px] h-auto object-contain opacity-95"
-            />
-
-            {/* Decorative blobs */}
-            <div className="absolute -z-10 -top-10 -right-10 h-44 w-44 rounded-full bg-sky/40 blur-2xl" />
-            <div className="absolute -z-10 -bottom-12 -left-12 h-52 w-52 rounded-full bg-beige/50 blur-2xl" />
+          {/* Logo premium card */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="rounded-3xl border border-ink/10 bg-cream/80 backdrop-blur p-6 sm:p-8 shadow-sm">
+              <img
+                src={logo}
+                alt="Neo Translations"
+                className="w-[200px] sm:w-[260px] lg:w-[420px] h-auto object-contain opacity-95"
+              />
+            </div>
           </div>
 
           {/* Text Side */}
