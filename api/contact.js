@@ -5,7 +5,10 @@ export const config = {
   api: { bodyParser: false },
 };
 
-function parseMultipart(req, { maxFiles = 3, maxTotalBytes = 10 * 1024 * 1024 } = {}) {
+function parseMultipart(
+  req,
+  { maxFiles = 3, maxTotalBytes = 10 * 1024 * 1024 } = {},
+) {
   return new Promise((resolve, reject) => {
     const bb = Busboy({ headers: req.headers });
 
@@ -53,7 +56,8 @@ function parseMultipart(req, { maxFiles = 3, maxTotalBytes = 10 * 1024 * 1024 } 
 
 export default async function handler(req, res) {
   try {
-    if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
+    if (req.method !== "POST")
+      return res.status(405).json({ error: "Method not allowed" });
 
     const { fields, files } = await parseMultipart(req);
 
@@ -68,8 +72,9 @@ export default async function handler(req, res) {
 
     const resend = new Resend(process.env.RESEND_API_KEY);
 
-    const to = process.env.CONTACT_TO_EMAIL="info@neotranslations.com.au"; // el mail de la clienta
-    const from = process.env.CONTACT_FROM_EMAIL= "Info Neo Translations  <info@neotranslations.com.au>"; // ej: "Neo Translations <onboarding@resend.dev>" o tu dominio verificado
+    const to = (process.env.CONTACT_TO_EMAIL = "info@neotranslations.com.au"); // el mail de la clienta
+    const from = (process.env.CONTACT_FROM_EMAIL =
+      "Info Neo Translations  <onboarding@resend.dev>"); // ej: "Neo Translations <onboarding@resend.dev>" o tu dominio verificado
 
     if (!to || !from) {
       return res.status(500).json({ error: "Email env vars missing." });
@@ -79,7 +84,9 @@ export default async function handler(req, res) {
       from,
       to,
       reply_to: email,
-      subject: subject ? `[Neo Translations] ${subject}` : "[Neo Translations] New website enquiry",
+      subject: subject
+        ? `[Neo Translations] ${subject}`
+        : "[Neo Translations] New website enquiry",
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
       attachments: files, // ✅ adjuntos reales (base64)
     });

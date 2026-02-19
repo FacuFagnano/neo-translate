@@ -30,17 +30,11 @@ export default function Home() {
               className="block lg:hidden w-[220px] sm:w-[280px] h-auto object-contain opacity-95"
             />
 
-            {/* Desktop logo (masked left) */}
+            {/* Desktop logo */}
             <img
               src={logo}
               alt="Neo Translations"
-              className="hidden lg:block w-[520px] h-auto object-contain opacity-90"
-              style={{
-                WebkitMaskImage:
-                  "linear-gradient(to right, transparent 0%, black 18%, black 100%)",
-                maskImage:
-                  "linear-gradient(to right, transparent 0%, black 18%, black 100%)",
-              }}
+              className="w-[220px] sm:w-[280px] lg:w-[520px] h-auto object-contain opacity-95"
             />
 
             {/* Decorative blobs */}
