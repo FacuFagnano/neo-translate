@@ -23,13 +23,11 @@ export default function Home() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Logo premium card */}
           <div className="flex justify-center lg:justify-end">
-            <div className="rounded-3xl border border-ink/10 bg-cream/80 backdrop-blur p-6 sm:p-8 shadow-sm">
-              <img
-                src={logo}
-                alt="Neo Translations"
-                className="w-[200px] sm:w-[260px] lg:w-[420px] h-auto object-contain opacity-95"
-              />
-            </div>
+            <img
+              src={logo}
+              alt="Neo Translations"
+              className="w-[200px] sm:w-[260px] lg:w-[420px] shadow-sm rounded-3xl h-auto object-contain opacity-95"
+            />
           </div>
 
           {/* Text Side */}
