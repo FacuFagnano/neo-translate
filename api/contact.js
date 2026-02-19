@@ -68,8 +68,8 @@ export default async function handler(req, res) {
 
     const resend = new Resend(process.env.RESEND_API_KEY);
 
-    const to = process.env.CONTACT_TO_EMAIL="info@neotranslations.com.au"; // el mail de la clienta
-    const from = process.env.CONTACT_FROM_EMAIL= "Info Neo Translations  <info@neotranslations.com.au>"; // ej: "Neo Translations <onboarding@resend.dev>" o tu dominio verificado
+    const to = process.env.CONTACT_TO_EMAIL="facundofagnano@gmail.com"; // el mail de la clienta
+    const from = process.env.CONTACT_FROM_EMAIL= "Info Neo Translations  <onboarding@resend.dev>"; // ej: "Neo Translations <onboarding@resend.dev>" o tu dominio verificado
 
     if (!to || !from) {
       return res.status(500).json({ error: "Email env vars missing." });
