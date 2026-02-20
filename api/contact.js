@@ -72,7 +72,7 @@ export default async function handler(req, res) {
 
     const resend = new Resend(process.env.RESEND_API_KEY);
 
-    const to = (process.env.CONTACT_TO_EMAIL = "test@neotranslations.com.au"); 
+    const to = (process.env.CONTACT_TO_EMAIL = "info@neotranslations.com.au"); 
     const from = (process.env.CONTACT_FROM_EMAIL =
       "WebPage Neo Traslations <no-reply@neotranslations.com.au>"); 
 

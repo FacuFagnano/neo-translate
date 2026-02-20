@@ -1,11 +1,11 @@
 export const content = {
   en: {
     navbar: {
-      logo: "NAATI Certified Translator",
+      logo: "NAATI Certified Translations",
       home: "Home",
       mission: "My Mission",
       services: "Services",
-      expertise: "Expertise",
+      expertise: "Expertise & FAQs",
       about: "About Me",
       contact: "Contact",
       quote: "Get a Quote",
@@ -87,7 +87,34 @@ export const content = {
     },
 
     footer: {
-      text1: "NAATI certified translations - clear, accurate and trusted."
+      text1: "NAATI certified translations - clear, accurate and trusted.",
+    },
+
+    faq: {
+      title: "FAQs",
+      subtitle: "Quick answers to common questions.",
+      items: [
+        {
+          q: "Payment methods",
+          a: "We accept transfers to Australian and Argentinian bank accounts, as well as PayPal, Wise, and Revolut.",
+        },
+        {
+          q: "Express translations",
+          a: "Express turnaround is available for an additional fee. The cost depends on the document type and number of pages.",
+        },
+        {
+          q: "Physical vs digital stamp",
+          a: "In most cases, both have the same validity. It only changes if an organisation specifically requires a physical stamp (they usually state this clearly).",
+        },
+        {
+          q: "Do I need an apostille?",
+          a: "It depends on the organisation where you will submit the documents. I recommend confirming with them—sometimes an apostille and/or its translation is required.",
+        },
+        {
+          q: "Do translations expire?",
+          a: "Translations do not expire. What expires is the translator’s NAATI certification, which must be renewed every three years.",
+        },
+      ],
     },
   },
 
@@ -97,7 +124,7 @@ export const content = {
       home: "Inicio",
       mission: "Mi misión",
       services: "Servicios",
-      expertise: "Experiencia",
+      expertise: "Experiencia & FAQs",
       about: "Sobre mí",
       contact: "Contacto",
       quote: "Pedir presupuesto",
@@ -179,7 +206,34 @@ export const content = {
     },
 
     footer: {
-      text1: "Traducciones certificadas NAATI - claras, precisas y confiables."
+      text1: "Traducciones certificadas NAATI - claras, precisas y confiables.",
+    },
+
+    faq: {
+      title: "Preguntas frecuentes",
+      subtitle: "Respuestas rápidas a las consultas más comunes.",
+      items: [
+        {
+          q: "Medios de pago",
+          a: "Aceptamos transferencias a cuenta bancaria en Australia y Argentina, y también PayPal, Wise y Revolut.",
+        },
+        {
+          q: "Traducción express",
+          a: "Podemos ofrecer traducciones express con un costo adicional. El importe depende del tipo de documento y la cantidad de páginas.",
+        },
+        {
+          q: "¿El sello es físico o digital?",
+          a: "Generalmente tiene la misma validez. Solo cambia si la entidad requiere específicamente sello físico (en ese caso, suele indicarlo explícitamente).",
+        },
+        {
+          q: "¿Necesito apostilla?",
+          a: "Depende de la entidad donde vas a presentar los documentos. Te recomiendo confirmarlo con ellos: en algunos casos, la apostilla y/o su traducción es un requisito.",
+        },
+        {
+          q: "¿Las traducciones tienen fecha de expiración?",
+          a: "Las traducciones no vencen. Lo que vence es la certificación NAATI del traductor, que se renueva cada tres años.",
+        },
+      ],
     },
   },
 };

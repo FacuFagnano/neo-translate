@@ -23,7 +23,7 @@ export default function About() {
           <div className="relative">
             <img
               src={aboutmePhoto}
-              alt="Yuliana Neonelli - NAATI Certified Translator"
+              alt="Yuliana Neonelli - NAATI Certified Translations"
               className="rounded-3xl border border-ink/10 shadow-sm object-cover w-full max-h-[520px]"
             />
 
