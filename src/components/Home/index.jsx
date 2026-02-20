@@ -33,7 +33,7 @@ export default function Home() {
           {/* Text Side */}
           <div className="order-2 lg:order-1">
             <p className="text-sm font-medium text-slate">
-              NAATI Certified Translator
+              NAATI Certified Translations
             </p>
 
             <h1 className="mt-3 text-4xl sm:text-5xl leading-tight [font-family:var(--font-title)]">

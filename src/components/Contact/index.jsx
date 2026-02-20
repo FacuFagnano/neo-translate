@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { content } from "../../data/content";
 import useRevealOnScroll from "../../hooks/useRevealOnScroll";
-import { FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 
 export default function Contact() {
   const { lang } = useLanguage();
@@ -82,7 +82,7 @@ export default function Contact() {
                 className="inline-flex items-center gap-2 rounded-2xl border border-ink/15 bg-cream px-4 py-2 text-sm font-medium text-ink hover:bg-beige/40 transition no-underline"
               >
                 <FaInstagram className="text-lg" />
-                Instagram
+                @neo.translations
               </a>
 
               {/* LinkedIn */}
@@ -93,18 +93,30 @@ export default function Contact() {
                 className="inline-flex items-center gap-2 rounded-2xl border border-ink/15 bg-cream px-4 py-2 text-sm font-medium text-ink hover:bg-beige/40 transition no-underline"
               >
                 <FaLinkedin className="text-lg" />
-                LinkedIn
+                /in/yuliananeonelli
               </a>
 
               {/* WhatsApp placeholder */}
-              <button
-                type="button"
+              <a
+                href="https://wa.me/610477005437"
+                rel="noreferrer"
+                target="_blank"
                 className="inline-flex items-center gap-2 rounded-2xl border border-ink/15 bg-cream px-4 py-2 text-sm font-medium text-ink hover:bg-beige/40 transition"
-                onClick={() => alert("WhatsApp number coming soon")}
               >
                 <FaWhatsapp className="text-lg" />
-                WhatsApp
-              </button>
+                +610477005437
+              </a>
+
+              {/* Mail placeholder */}
+              <a
+                href="https://wa.me/610477005437"
+                rel="noreferrer"
+                target="_blank"
+                className="inline-flex items-center gap-2 rounded-2xl border border-ink/15 bg-cream px-4 py-2 text-sm font-medium text-ink hover:bg-beige/40 transition"
+              >
+                <FaEnvelope className="text-lg" />
+                info@neotrasnlations.com.au
+              </a>
             </div>
           </div>
 

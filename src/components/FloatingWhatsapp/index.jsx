@@ -1,7 +1,7 @@
 import { FaWhatsapp } from "react-icons/fa6";
 
 export default function FloatingWhatsApp() {
-  const whatsappLink = "https://wa.me/6491154662424";
+  const whatsappLink = "https://wa.me/610477005437";
 
   return (
     <a

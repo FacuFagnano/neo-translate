@@ -3,8 +3,8 @@ import { content } from "../../data/content";
 import useRevealOnScroll from "../../hooks/useRevealOnScroll";
 
 import studentVisaImg from "../../assets/services/student-visa.jpg";
-import standardDocsImg from "../../assets/services/servicios-licencia-argentina.jpg";
-import nonNaatiImg from "../../assets/services/traducciones-no-naati.png";
+import standardDocsImg from "../../assets/services/service-license.png";
+import nonNaatiImg from "../../assets/services/no-naati-translations.png";
 
 function ServiceImageCard({ title, image, lines }) {
   return (
