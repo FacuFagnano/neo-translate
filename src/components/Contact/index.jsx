@@ -109,13 +109,13 @@ export default function Contact() {
 
               {/* Mail placeholder */}
               <a
-                href="https://wa.me/610477005437"
+                href="mailto:info@neotranslations.com.au"
                 rel="noreferrer"
                 target="_blank"
                 className="inline-flex items-center gap-2 rounded-2xl border border-ink/15 bg-cream px-4 py-2 text-sm font-medium text-ink hover:bg-beige/40 transition"
               >
                 <FaEnvelope className="text-lg" />
-                info@neotrasnlations.com.au
+                info@neotranslations.com.au
               </a>
             </div>
           </div>
